@@ -1,0 +1,70 @@
+.CartWrap {
+  background-color: #f9e9ee;
+  width: 100%;
+  margin-bottom: 100px;
+  position: fixed;
+  top: 100px;
+  left: 0;
+  display: block;
+  overflow: auto;
+  border-radius: 10px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+}
+
+.CartForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.Input {
+  height: 50px;
+  margin: 10px auto;
+  border-radius: 10px;
+  font-size: 14px;
+  width: 80%;
+  min-width: 265px;
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.Button {
+  background-color: #b2d3e1;
+  border: none;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 71px;
+  height: 50px;
+}
+
+.Ul {
+  margin: 0 20px 10px;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.ClickView {
+  width: 98%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.Bottom {
+  opacity: 0;
+  transform: translateY(-5px);
+}

@@ -18,17 +18,6 @@ export default function Home() {
   function formLogin(e) {}
   const [modalOpen, setModalOpen] = useState(false);
 
-  const modalVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1 },
-  };
-
-  const modalTransition = {
-    type: "spring",
-    stiffness: 200,
-    damping: 20,
-  };
-
   function formLogin(e) {
     e.preventDefault();
     if (e.target.id.value == "") {
@@ -59,13 +48,7 @@ export default function Home() {
 
   function formSignUp(e) {
     e.preventDefault();
-    // console.log(e);
-    // console.log(
-    //   e.target.signid.value,
-    //   e.target.signpasswords.value,
-    //   e.target.nickname.value,
-    //   e.target.birthday.value
-    // );
+
     axios.post("/api", {
       LoginID: e.target.signid.value,
       LoginPW: e.target.signpasswords.value,
@@ -75,77 +58,16 @@ export default function Home() {
     setModalOpen(!modalOpen);
   }
 
-  ////////////////////////////////////////////////
-  ////////////////////////////////////////////////
-  ////////////////////////////////////////////////
-
-  const installApp = () => {
-    if (!deferredPrompt.current) return false;
-
-    //홈화면의 추가를 실행시킨다
-    deferredPrompt.current.prompt();
-
-    //실행 후 유저가 설치를 했는지 안했는지를 알 수 있다
-    deferredPrompt.current.userChoice.then((choiceResult) => {
-      //설치 했을 때
-      if (choiceResult.outcome === "accepted") {
-        console.log("User accepted the A2HS prompt");
-        dispatch({
-          type: "HIDE_BUTTON",
-        });
-      } else {
-        //설치 하지 않았을 때
-        console.log("User dismissed the A2HS prompt");
-      }
-    });
-  };
-
-  let deferredPrompt = useRef(null);
-
-  useEffect(() => {
-    console.log("Listening for Install prompt");
-    window.addEventListener("beforeinstallprompt", (e) => {
-      e.preventDefault();
-      deferredPrompt.current = e;
-    });
-
-    //설치가 되어있다면 버튼은 숨긴다
-    if (!deferredPrompt.current) {
-      // return dispatch({
-      //   type: "HIDE_BUTTON",
-      // });
-    }
-
-    //버튼을 보여줌
-    // dispatch({
-    //   type: "SHOW_BUTTON",
-    // });
-  }, []);
-
-  ////////////////////////////////////////////////
-  ////////////////////////////////////////////////
-
   return (
     <>
       <div className={styles.container}>
-        {/* dddddddddddddd */}
-        {/* <img
-          src="./img/Balloon-removebg-preview.png"
-          alt="image1"
-          className={styles.image1}
-        /> //////*/}
-        {/* <img
-          src="/img/pinkSun-removebg-preview.png"
-          alt="image2"
-          className={styles.image2}
-        />{" "} */}
         <div className={styles.textContainer}>
           <h1 className={styles.title}>
             소중한 사람에게
             <br />
             마음을 전해보세요 !
           </h1>
-          <button onClick={installApp}>다운로드</button>
+
           <p className={styles.subtitle}>
             내가 받고싶은 선물을 위시리스트에 담아보세요
             <br />
@@ -159,6 +81,7 @@ export default function Home() {
                 name="id"
                 placeholder="아이디"
                 type="text"
+                autoComplete="username"
                 className={styles.input}
               />
             </div>
@@ -170,6 +93,7 @@ export default function Home() {
                 id="inputPassword5"
                 aria-describedby="passwordHelpBlock"
                 name="passwords"
+                autoComplete="current-password"
                 className={styles.input}
               />
             </div>
@@ -203,14 +127,20 @@ export default function Home() {
 
           <form onSubmit={formSignUp} className={styles.modalForm}>
             <div className={styles.modalInputWrapper}>
-              <Form.Control placeholder="아이디" name="signid" type="text" />
+              <Form.Control
+                placeholder="아이디"
+                name="signid"
+                type="text"
+                autoComplete="current-id"
+              />
             </div>
 
             <div className={styles.modalInputWrapper}>
               <Form.Control
                 placeholder="비밀번호"
-                name="signpasswords"
+                name="password"
                 type="password"
+                autoComplete="current-password"
               />
             </div>
 

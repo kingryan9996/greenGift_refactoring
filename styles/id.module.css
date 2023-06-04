@@ -20,12 +20,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: 100%;
   max-width: 590px;
   min-width: 300px;
-  
-  background-color: #DFD7EC;
+
+  background-color: #dfd7ec;
   position: fixed;
   left: 50%;
   top: 0;
@@ -44,12 +44,16 @@
   align-items: center;
 }
 
-.searchWrap{
+.searchWrap {
   margin: 0;
 }
 
 .liStyle {
-  margin:0 3px 0 7px;
+  margin: 0 3px 0 7px;
+}
+
+.imgFigure {
+  padding: 3px 0;
 }
 
 .searchForm {
@@ -59,6 +63,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.strong12 {
+  font-size: 13px;
 }
 
 .input {
@@ -72,10 +80,20 @@
   background: rgba(255, 255, 255, 0.5);
   outline: none;
 }
-/*   
-  .searchInput {
-    transform: scale(0);
-  } */
+
+.searchInput {
+  width: 98%;
+
+  height: 34px;
+  border: "none";
+  border-radius: 10px;
+  cursor: "pointer";
+  margin: 5px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.5);
+  outline: "none";
+  padding: 10px;
+}
 
 .buttonStyle {
   width: 30px;

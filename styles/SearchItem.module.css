@@ -1,0 +1,50 @@
+.figure {
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 10px;
+  margin: 10px 10px 0;
+  width: 43%;
+}
+
+.naverSearchImg {
+  width: 100%;
+  --p: width;
+  height: var(--p) px;
+}
+
+.ImgDescription {
+  width: 100%;
+  padding: 10px;
+  display: block;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.Price {
+  font-size: 0.9rem;
+}
+
+.p {
+  padding: 5px 0;
+}
+
+.div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.button {
+  background-color: #f2cfda;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  width: 47%;
+  height: 40px;
+  cursor: pointer;
+  margin: 0;
+}

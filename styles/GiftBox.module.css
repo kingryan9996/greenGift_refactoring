@@ -1,0 +1,60 @@
+.GiftBox {
+  width: 100%;
+  margin: 255px 0 65px;
+}
+
+.UlWrap {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  border-radius: 10px;
+  background-color: #fff;
+  list-style: none;
+  box-shadow: 0px 4px 10px 2px #ccc;
+  border: 8px solid #fff;
+}
+
+.List {
+  width: 100%;
+  padding: 5px 0;
+}
+
+.ListItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 0 5%;
+}
+
+.ItemImg {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 0;
+  border-radius: 50%;
+  background-color: orange;
+}
+
+.TitleWrap {
+  width: calc(100% - 70px);
+  margin: 0;
+  padding-left: 20px;
+}
+
+.Title {
+  width: 100%;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.Price {
+  margin: 7px 0;
+  font-size: 12px;
+}
+
+.targetName {
+  font-size: 12px;
+}
