@@ -12,8 +12,10 @@ import styles from "@/styles/index.module.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { setUserLogin } = useContext(TeamC);
+  const { userLogin, setUserLogin } = useContext(TeamC);
   const router = useRouter();
+
+  console.log("userLogin", userLogin);
 
   function formLogin(e) {}
   const [modalOpen, setModalOpen] = useState(false);
@@ -67,7 +69,6 @@ export default function Home() {
             <br />
             마음을 전해보세요 !
           </h1>
-          <button onClick={installApp}>다운로드</button>
           <p className={styles.subtitle}>
             내가 받고싶은 선물을 위시리스트에 담아보세요
             <br />

@@ -1,12 +1,15 @@
 import React, { useRef, useState } from "react";
 import styles from "styles/id.module.css";
+import axios from "axios";
 
 import { motion } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from "next/router";
 
 const UserSearchButton = () => {
+  const router = useRouter();
   const [inputVisible, setInputVisible] = useState(false);
   const searchInput = useRef();
 
@@ -20,6 +23,7 @@ const UserSearchButton = () => {
     e.preventDefault();
 
     axios.get("/api").then((res) => {
+      console.log("res", res);
       let newValue = res.data.filter(
         (obj) => obj.NickName == searchInput.current.value
       );
