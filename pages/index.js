@@ -4,7 +4,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { TeamC } from "./src/Context";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { Translate } from "@mui/icons-material";
 
 import styles from "@/styles/index.module.css";
@@ -67,7 +67,7 @@ export default function Home() {
             <br />
             마음을 전해보세요 !
           </h1>
-
+          <button onClick={installApp}>다운로드</button>
           <p className={styles.subtitle}>
             내가 받고싶은 선물을 위시리스트에 담아보세요
             <br />
