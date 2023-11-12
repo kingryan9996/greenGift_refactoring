@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "@/styles/ShoppingCart.module.css";
+import styles from "styles/ShoppingCart.module.css";
 import SuggestedSearch from "./SuggestedSearch";
 import SearchItem from "./SearchItem";
 

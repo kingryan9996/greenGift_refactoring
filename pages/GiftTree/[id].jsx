@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useContext } from "react";
-import { TeamC } from "../src/Context";
-import ProductList from "../src/component/ProductList";
+import { TeamC } from "context/Context";
+import ProductList from "component/ProductList";
 import { useRouter } from "next/router";
-import styles from "@/styles/id.module.css";
-import FriendsList from "../src/component/FriendsList";
-import GiftTargetName from "../src/component/GiftTargetName";
-import UserSearchButton from "../src/component/UserSearchButton";
+import styles from "styles/id.module.css";
+import FriendsList from "component/FriendsList";
+import GiftTargetName from "component/GiftTargetName";
+import UserSearchButton from "component/UserSearchButton";
 
 const GiftRouteCom = () => {
   const router = useRouter();

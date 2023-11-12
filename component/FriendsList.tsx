@@ -3,7 +3,7 @@ import axios from "axios";
 import styles from "styles/id.module.css";
 import FriendsItem from "./FriendsItem";
 import { useContext } from "react";
-import { TeamC } from "../Context";
+import { TeamC } from "../context/Context";
 
 const FriendsList = () => {
   const { userLogin, setUserLogin } = useContext(TeamC);

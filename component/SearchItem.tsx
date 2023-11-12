@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import styles from "@/styles/SearchItem.module.css";
+import styles from "styles/SearchItem.module.css";
 import axios from "axios";
-import { TeamC } from "../Context";
+import { TeamC } from "../context/Context";
 
 const SearchItem = ({ obj, idx }) => {
   const { userLogin } = useContext(TeamC);

@@ -1,0 +1,10 @@
+.SignUpForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 10px;
+  > button {
+    color: var(--deepBlue);
+    font-size: 16px;
+  }
+}

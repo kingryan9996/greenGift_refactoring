@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import styles from "@/styles/ProductList.module.css";
+import styles from "styles/ProductList.module.css";
 import ShoppingCart from "./ShoppingCart";
 import WishList from "./WishList";
 

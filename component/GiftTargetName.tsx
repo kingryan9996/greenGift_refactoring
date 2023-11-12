@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { TeamC } from "../Context";
+import { TeamC } from "../context/Context";
 import styles from "styles/GiftTargetName.module.css";
 
 const GiftTargetName = () => {

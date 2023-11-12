@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "@/styles/WishList.module.css";
+import styles from "styles/WishList.module.css";
 import axios from "axios";
 
 const WishListItem = ({

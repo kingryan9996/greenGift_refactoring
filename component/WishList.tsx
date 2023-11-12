@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
-import styles from "@/styles/WishList.module.css";
+import styles from "styles/WishList.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { TeamC } from "../Context";
+import { TeamC } from "../context/Context";
 import WishListItem from "./WishListItem";
 
 const WishList = () => {

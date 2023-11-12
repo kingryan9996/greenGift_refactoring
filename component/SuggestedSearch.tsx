@@ -13,12 +13,10 @@ const SuggestedSearch = ({ obj, idx, searchData, setSearchData, bottom }) => {
     keyWo.current = obj;
 
     axios
-      .get(
-        `http://127.0.0.1:4000/search/shop?query=${obj}&display=${numRef.current}`
-      )
       // .get(
       //   `https://port-0-node-greengift-nx562olfqkxd9g.sel3.cloudtype.app/search/shop?query=${obj}&display=${numRef.current}`
       // )
+      .get(`search/shop?query=${obj}&display=${numRef.current}`)
       .then((res) => {
         // console.log(res.data.items)
         setSearchData(res.data.items);
@@ -27,19 +25,20 @@ const SuggestedSearch = ({ obj, idx, searchData, setSearchData, bottom }) => {
   };
 
   const dragApi = (obj) => {
-    axios
-      .get(
-        `http://127.0.0.1:4000/search/shop?query=${obj}&display=${numRef.current}`
-      )
-      // .get(
-      //   `https://port-0-node-greengift-nx562olfqkxd9g.sel3.cloudtype.app/search/shop?query=${obj}&display=${numRef.current}`
-      // )
-      .then((res) => {
-        // console.log(res.data.items)
-        setSearchData(res.data.items);
-        numRef.current += 10;
-        a.current = true; //3. 2번 완료후 다시 값을 받아온 뒤에 a.current를 true로 바꿔서 드래그 함수를 실행하게 만들어라
-      });
+    //.get(`search/shop?query=${obj}&display=${numRef.current}`)
+    // axios
+    //   // .get(
+    //   //   `http://127.0.0.1:4000/search/shop?query=${obj}&display=${numRef.current}`
+    //   // )
+    //   .get(
+    //     `https://port-0-node-greengift-nx562olfqkxd9g.sel3.cloudtype.app/search/shop?query=${obj}&display=${numRef.current}`
+    //   )
+    // .then((res) => {
+    //   // console.log(res.data.items)
+    //   setSearchData(res.data.items);
+    //   numRef.current += 10;
+    //   a.current = true; //3. 2번 완료후 다시 값을 받아온 뒤에 a.current를 true로 바꿔서 드래그 함수를 실행하게 만들어라
+    // });
   };
 
   useEffect(() => {

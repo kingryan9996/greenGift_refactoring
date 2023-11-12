@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
-import { TeamC } from "../src/Context";
+import { TeamC } from "context/Context";
 import { useRouter } from "next/router";
-import SentGiftBox from "../src/component/sentGiftBox";
-import GiftBox from "../src/component/GiftBox";
+import SentGiftBox from "component/sentGiftBox";
+import GiftBox from "component/GiftBox";
 import styles from "styles/MyPage.module.css";
-import LogoutButton from "../src/component/LogoutButton";
-import UserProfile from "../src/component/UserProfile";
-import GiftCategoryButton from "../src/component/GiftCategoryButton";
+import LogoutButton from "component/LogoutButton";
+import UserProfile from "component/UserProfile";
+import GiftCategoryButton from "component/GiftCategoryButton";
 
 const MyRouteCom = () => {
   const { userLogin, setUserLogin } = useContext(TeamC);

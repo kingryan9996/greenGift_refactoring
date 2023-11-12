@@ -1,28 +1,25 @@
+@import "./reset.scss";
+@import "./colors.scss";
+
 * {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: rgba(0, 0, 0, 0.7); */
 }
 
 body {
-  /* background-color:lightsteelblue; */
-  /* background-color:#b2d3e1; */
-  background: #12c2e9; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #f64f59,
-    #c471ed,
-    #12c2e9
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #f64f59,
-    #c471ed,
-    #12c2e9
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #12c2e9;
+  background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
+  background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
 }
-span {
+
+main {
+  margin: 0 auto;
+  width: 500px;
+  height: 100vh;
+  background-color: rgba(249, 233, 238, 0.8);
+}
+/* span {
   font-size: 16px;
 }
 
@@ -56,9 +53,6 @@ button:hover {
 
 #__next {
   width: 100%;
-  min-width: 300px;
-  max-width: 600px;
-  /* height: 100vh; */
 }
 
 .Gift:nth-child(even) {
@@ -80,20 +74,15 @@ main {
     233,
     238,
     0.8
-  ); /* Add some transparency to the background color */
-  backdrop-filter: blur(10px); /* Add the glassmorphism effect */
+  );
+  backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 auto;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
-input {
-  height: 50px;
-}
-
-/* material ui login form */
 
 .css-1b0ve20 > :not(style) {
   margin: 0;
@@ -114,10 +103,9 @@ input {
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); */
   background: rgba(255, 255, 255, 0.7);
   outline: darkblue;
   padding: 10px 15px;
   height: 34px;
   margin: 5px;
-}
+} */

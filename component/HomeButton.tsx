@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGift } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
-import styles from "@/styles/NavBar.module.css";
+import styles from "styles/NavBar.module.css";
 
 const HomeButton = ({ userLogin }) => {
   const router = useRouter();

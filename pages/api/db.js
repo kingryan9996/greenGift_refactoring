@@ -1,6 +1,5 @@
-const { createPool } = require('mysql');
-const cors = require('cors')
-
+const { createPool } = require("mysql");
+const cors = require("cors");
 
 // let corsOptions = {
 //     origin: '*',      // 출처 허용 옵션
@@ -10,26 +9,26 @@ const cors = require('cors')
 // app.use(cors(corsOptions))
 
 const pool = createPool({
-    host: 'svc.sel3.cloudtype.app',
-    user: 'root',
-    password: '5765',
-    port: 30962,
-    database: 'nextGreenGift', //mySQL프로젝트 이름이 아니고, 프로젝트 안에 SCHEMAS안에 있는 root 이름을 작성해야함/////
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  port: process.env.DB_PORT,
+  database: "nextGreenGift", //mySQL프로젝트 이름이 아니고, 프로젝트 안에 SCHEMAS안에 있는 root 이름을 작성해야함/////
 });
 
 pool.getConnection(() => {
-    console.log('success')
+  console.log("success");
 });
 
 const executeQuery = async (query, arraParms) => {
-    return await new Promise((resolve) => {
-        pool.query(query, arraParms, (err, data) => { //query라는 것을 통해서 작업을 진행한다.
-            // 조회 ,추가 ,수정, 삭제 등등
-            resolve(data)
-        });
-    })
-
-}
+  return await new Promise((resolve) => {
+    pool.query(query, arraParms, (err, data) => {
+      //query라는 것을 통해서 작업을 진행한다.
+      // 조회 ,추가 ,수정, 삭제 등등
+      resolve(data);
+    });
+  });
+};
 
 module.exports = { executeQuery };
 

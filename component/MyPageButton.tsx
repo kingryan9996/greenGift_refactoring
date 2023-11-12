@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from "next/router";
-import styles from "@/styles/NavBar.module.css";
+import styles from "styles/NavBar.module.css";
 import axios from "axios";
 
 const MyPageButton = ({ userLogin }) => {
@@ -11,11 +11,13 @@ const MyPageButton = ({ userLogin }) => {
   const [userBadge, setUserBadge] = useState(null);
 
   useEffect(() => {
-    axios
-      .get("/api/gift", { params: { userLogin: userLogin.UserID } })
-      .then((res) => {
-        setUserBadge(res.data.filter((obj) => obj.state == 1).length);
-      });
+    if(userLogin){
+      axios
+        .get("api/gift", { params: { userLogin: userLogin.UserID } })
+        .then((res) => {
+          setUserBadge(res.data.filter((obj) => obj.state == 1).length);
+        });
+    }
   }, [userLogin]);
 
   return (
