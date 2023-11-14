@@ -10,7 +10,7 @@ interface SignUpValue {
   birth: string;
   nickName: string;
 }
-export default function SignUpForm({ formSignUp }: { formSignUp: any }) {
+export default function SignUpForm() {
   const [modalOpen, setModalOpen] = useState(false);
   const [signUpValue, setSignUpValue] = useState<SignUpValue>({
     id: "",
@@ -54,55 +54,57 @@ const SignUpModal = ({
 }: SignUpModalType) => {
   return (
     <Modal>
-      <Button
-        onClick={() => {
-          setModalOpen(false);
-        }}
-      >
-        X
-      </Button>
-      <form onSubmit={formSignUp} className={styles.modalForm}>
-        <div className={styles.modalInputWrapper}>
-          <Input
-            value={signUpValue.id}
-            onChange={(res) => {
-              setSignUpValue({ ...signUpValue, id: res });
-            }}
-            placeholder="아이디"
-          />
-        </div>
+      <div className={styles.SignUpModal}>
+        <Button
+          onClick={() => {
+            setModalOpen(false);
+          }}
+        >
+          x
+        </Button>
+        <form onSubmit={() => {}} className={styles.modalForm}>
+          <div className={styles.modalInputWrapper}>
+            <Input
+              value={signUpValue.id}
+              onChange={(res) => {
+                setSignUpValue({ ...signUpValue, id: res });
+              }}
+              placeholder="아이디"
+            />
+          </div>
 
-        <div className={styles.modalInputWrapper}>
-          <Input
-            value={signUpValue.password}
-            onChange={(res) => {
-              setSignUpValue({ ...signUpValue, password: res });
-            }}
-            placeholder="비밀번호"
-          />
-        </div>
+          <div className={styles.modalInputWrapper}>
+            <Input
+              value={signUpValue.password}
+              onChange={(res) => {
+                setSignUpValue({ ...signUpValue, password: res });
+              }}
+              placeholder="비밀번호"
+            />
+          </div>
 
-        <div className={styles.modalInputWrapper}>
-          <Input
-            value={signUpValue.birth}
-            onChange={(res) => {
-              setSignUpValue({ ...signUpValue, birth: res });
-            }}
-            placeholder="생일"
-          />
-        </div>
+          <div className={styles.modalInputWrapper}>
+            <Input
+              value={signUpValue.birth}
+              onChange={(res) => {
+                setSignUpValue({ ...signUpValue, birth: res });
+              }}
+              placeholder="생일"
+            />
+          </div>
 
-        <div className={styles.modalInputWrapper}>
-          <Input
-            value={signUpValue.nickName}
-            onChange={(res) => {
-              setSignUpValue({ ...signUpValue, nickName: res });
-            }}
-            placeholder="닉네임"
-          />
-        </div>
-        <Button>회원가입</Button>
-      </form>
+          <div className={styles.modalInputWrapper}>
+            <Input
+              value={signUpValue.nickName}
+              onChange={(res) => {
+                setSignUpValue({ ...signUpValue, nickName: res });
+              }}
+              placeholder="닉네임"
+            />
+          </div>
+          <Button>회원가입</Button>
+        </form>
+      </div>
     </Modal>
   );
 };

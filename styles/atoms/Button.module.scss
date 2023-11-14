@@ -5,10 +5,11 @@
   color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  background-color: #b2d3e1;
+  background-color: var(--blue);
 
   font-size: 16px;
-  &:hover {
-    opacity: 0.7;
+  &:hover,
+  &.active {
+    background-color: var(--deepBlue);
   }
 }

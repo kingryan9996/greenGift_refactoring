@@ -3,7 +3,7 @@ import { executeQuery } from "./db";
 export default function handler(req, res) {
   // DESC(내림차순), ASC(오름차순)
   const { method, body, query } = req;
-  console.log(method);
+  console.log(query);
 
   const selectGiftData = async () => {
     let { userLogin } = query;

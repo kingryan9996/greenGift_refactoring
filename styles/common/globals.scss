@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: var(--black);
 }
 
 body {
@@ -12,10 +13,13 @@ body {
   background: -webkit-linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
   background: linear-gradient(to right, #f64f59, #c471ed, #12c2e9);
 }
+::-webkit-scrollbar {
+  display: none;
+}
 
 main {
   margin: 0 auto;
-  width: 500px;
+  width: 590px;
   height: 100vh;
   background-color: rgba(249, 233, 238, 0.8);
 }
@@ -34,9 +38,7 @@ h3 {
   letter-spacing: -2px;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
+
 
 a,
 a:active,

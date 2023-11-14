@@ -6,10 +6,10 @@ const UserProfile = ({ userLogin }) => {
     <div className={styles.profileWrap}>
       <div>
         <p className={styles.profileImgWrap}>
-          <img
+          {/* <img
             className={styles.profileImg}
             src={`/img/Profile${(userLogin.UserID % 10) + 1}.jpg`}
-          />
+          /> */}
         </p>
         <p className={styles.GiftBoxWrap}>{userLogin?.NickName}</p>
       </div>

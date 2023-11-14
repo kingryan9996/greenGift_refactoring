@@ -1,0 +1,23 @@
+.WishList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0 20px;
+  > div {
+    width: calc(50% - 10px);
+  }
+}
+
+.Coin {
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.naverSearchImg {
+  width: 100%;
+  --p: width;
+  height: var(--p) px;
+}

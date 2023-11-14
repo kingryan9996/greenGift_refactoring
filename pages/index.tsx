@@ -1,64 +1,48 @@
-import { Inter } from "@next/font/google";
-import Form from "react-bootstrap/Form";
+import styles from "styles/pages/LoginPage.module.scss";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useContext } from "react";
 import { TeamC } from "../context/Context";
 import { useState } from "react";
-import { Translate } from "@mui/icons-material";
-import styles from "styles/index.module.css";
-import Input from "../component/atoms/Input";
-import Button from "component/atoms/Button";
 import LoginForm from "component/organisms/LoginForm";
-import LoginPage from "component/templates/LoginPage";
-
-const inter = Inter({ subsets: ["latin"] });
+import SignUpForm from "component/organisms/SignUpForm";
 
 export default function Home() {
-  const { userLogin, setUserLogin } = useContext(TeamC);
+  const { setUserLogin, setUserGiftBox } = useContext(TeamC);
   const router = useRouter();
 
-  const [loginValue, setLoginValue] = useState<{
-    id: string;
-    password: string;
-  }>({ id: "", password: "" });
-
-  // const [userId, setUserId] = useState<string>("");
-  // const [userPassword, setUserPassword] = useState<string>("");
-
-  console.log("loginValue", loginValue);
-
-  const [modalOpen, setModalOpen] = useState(false);
-
-  function formLogin(e) {
-    e.preventDefault();
-    console.log("e : ", e);
-    if (loginValue.id == "") {
+  const handleLogin = (id: string, password: string) => {
+    if (id === "") {
       return alert("ID를 입력해주세요.");
-    } else if (loginValue.password == "") {
+    } else if (password === "") {
       return alert("PW를 입력해주세요.");
-    }
+    } else {
+      axios
+        .get("/api", { LoginID: id })
+        .then((res) => {
+          console.log(res);
+          let newValue = res?.data?.find((obj) => obj.LoginID == id);
 
-    try {
-      axios.get("/api", { LoginID: loginValue.id }).then((res) => {
-        console.log(res);
-        let newValue = res?.data?.find((obj) => obj.LoginID == loginValue.id);
-
-        console.log(newValue, "newValue");
-        if (newValue.length === 0) {
-          return alert("등록되지 않은 ID입니다.");
-        } else if (newValue.LoginPW != loginValue.password) {
-          return alert("비밀번호를 확인해주세요.");
-        } else if (newValue.LoginPW == loginValue.password) {
-          setUserLogin(newValue);
-          router.push(`/GiftTree/${newValue.UserID}`);
-        }
-      });
-    } catch (error) {
-      // console.log(error);
-      alert(error);
+          console.log(newValue, "newValue");
+          if (!newValue) {
+            return alert("등록되지 않은 ID입니다.");
+          } else if (newValue.LoginPW != password) {
+            return alert("비밀번호를 확인해주세요.");
+          } else {
+            setUserLogin(newValue);
+            axios
+              .get("api/gift", { params: { userLogin: newValue.UserID } })
+              .then((res) => {
+                setUserGiftBox(res.data);
+              })
+              .then(() => {
+                router.push(`/wish/${newValue.UserID}`);
+              });
+          }
+        })
+        .catch((e) => alert(e));
     }
-  }
+  };
 
   function formSignUp(e) {
     e.preventDefault();
@@ -69,12 +53,24 @@ export default function Home() {
       NickName: e.target.nickname.value,
       Birth: e.target.birthday.value,
     });
-    setModalOpen(!modalOpen);
   }
 
+  const handleSignUp = () => {};
+
   return (
-    <>
-      <LoginPage />
-    </>
+    <div className={styles.LoginPage}>
+      <div>
+        <p>
+          <span>소중한 사람에게</span>
+          <span>마음을 전해보세요!</span>
+        </p>
+        <p>
+          <span>내가 받고싶은 선물을 위시리스트에 담아보세요</span>
+          <span>위시리스트를 공유하고, 선물을 주고받아보세요</span>
+        </p>
+      </div>
+      <LoginForm formLogin={handleLogin} />
+      <SignUpForm />
+    </div>
   );
 }

@@ -1,8 +1,7 @@
 import "styles/common/globals.scss";
-
 import Context from "../context/Context";
-import NavBar from "../component/NavBar";
 import Head from "next/head";
+
 export default function App({ Component, pageProps }) {
   return (
     <Context>
@@ -16,8 +15,6 @@ export default function App({ Component, pageProps }) {
       <main>
         <Component {...pageProps} />
       </main>
-      {/* <NavBar /> */}
-      {/* 로그인 구현하고나면 지울예정 */}
     </Context>
   );
 }

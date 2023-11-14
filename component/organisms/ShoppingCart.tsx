@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "styles/ShoppingCart.module.css";
-import SuggestedSearch from "./SuggestedSearch";
-import SearchItem from "./SearchItem";
+import styles from "styles/organisms/ShoppingCart.module.scss";
+import SuggestedSearch from "../SuggestedSearch";
+import SearchItem from "../SearchItem";
 
 const ShoppingCart = () => {
   const popularSearchTerms = ["생일", "결혼", "환갑", "응원", "합격"];
@@ -16,7 +16,7 @@ const ShoppingCart = () => {
   };
 
   return (
-    <div className={styles.CartWrap}>
+    <div className={styles.ShoppingCart}>
       <article>
         <form
           className={styles.CartForm}
